@@ -22,8 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "timer.h"
-#include "button.h"
+#include "global.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -99,15 +98,15 @@ setTimer1(100);
   while (1)
   {
 	  if(isButton1Pressed() == 1){
-	         HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
+	         setLedGreen();
 	    }
 
 	    if(isButton2Pressed() == 1){
-	           HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin);
+	           setLedRed();
 	      }
 
 	    if(isButton3Pressed() == 1){
-	           HAL_GPIO_TogglePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin);
+	           setLedYellow();
 	      }
     /* USER CODE END WHILE */
 

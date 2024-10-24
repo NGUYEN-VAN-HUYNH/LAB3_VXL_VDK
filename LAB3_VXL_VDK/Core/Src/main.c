@@ -23,6 +23,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "timer.h"
+#include "button.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -97,10 +98,17 @@ HAL_TIM_Base_Start_IT(&htim2);
 setTimer1(100);
   while (1)
   {
-	  if(timer1_flag == 1){
-		  HAL_GPIO_TogglePin(LED_RED1_GPIO_Port, LED_RED1_Pin);
-		  setTimer1(100);
-	  }
+	  if(isButton1Pressed() == 1){
+	         HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
+	    }
+
+	    if(isButton2Pressed() == 1){
+	           HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin);
+	      }
+
+	    if(isButton3Pressed() == 1){
+	           HAL_GPIO_TogglePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin);
+	      }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -247,6 +255,7 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	timerRun();
+	getKeyInput();
 }
 /* USER CODE END 4 */
 

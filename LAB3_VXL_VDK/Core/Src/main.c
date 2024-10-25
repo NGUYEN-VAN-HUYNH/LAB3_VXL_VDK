@@ -23,6 +23,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "global.h"
+#include "7_Segment.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -95,19 +96,22 @@ HAL_TIM_Base_Start_IT(&htim2);
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 setTimer1(100);
+int num = 3;
+HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin,GPIO_PIN_RESET);
+HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin,GPIO_PIN_RESET);
+HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin,GPIO_PIN_SET);
+HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin,GPIO_PIN_SET);
   while (1)
   {
-	  if(isButton1Pressed() == 1){
-	         setLedGreen();
-	    }
+	  if(timer1_flag == 1){
+		  num --;
+		  if(num == 0){
+			  num = 3;
+		  }
+		  setTimer1(100);
+		  display7SEG_North_South(num);
+	  }
 
-	    if(isButton2Pressed() == 1){
-	           setLedRed();
-	      }
-
-	    if(isButton3Pressed() == 1){
-	           setLedYellow();
-	      }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

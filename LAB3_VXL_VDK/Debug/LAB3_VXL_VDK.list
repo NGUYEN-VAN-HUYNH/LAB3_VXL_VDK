@@ -1921,8 +1921,8 @@ HAL_TIM_Base_Start_IT(&htim2);
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-setTimer1(1);
- 8000e00:	2001      	movs	r0, #1
+setTimer1(25);
+ 8000e00:	2019      	movs	r0, #25
  8000e02:	f000 f9af 	bl	8001164 <setTimer1>
 HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin,GPIO_PIN_SET);
  8000e06:	2201      	movs	r2, #1

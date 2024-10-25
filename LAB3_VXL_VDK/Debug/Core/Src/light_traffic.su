@@ -1,0 +1,2 @@
+light_traffic.c:16:6:init_traffic_light	24	static
+light_traffic.c:24:6:light_traffic_run	24	static

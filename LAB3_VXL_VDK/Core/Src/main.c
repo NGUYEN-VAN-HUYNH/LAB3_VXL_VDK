@@ -24,6 +24,7 @@
 /* USER CODE BEGIN Includes */
 #include "global.h"
 #include "7_Segment.h"
+#include "light_traffic.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -67,7 +68,7 @@ static void MX_TIM2_Init(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+init_traffic_light(RED_COLOR,RED_AUTO,5, GREEN_COLOR,GREEN_AUTO,3);
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -96,20 +97,17 @@ HAL_TIM_Base_Start_IT(&htim2);
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 setTimer1(100);
-int num = 3;
 HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin,GPIO_PIN_RESET);
 HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin,GPIO_PIN_RESET);
-HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin,GPIO_PIN_SET);
-HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin,GPIO_PIN_SET);
+HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin,GPIO_PIN_RESET);
+HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin,GPIO_PIN_RESET);
+
   while (1)
   {
 	  if(timer1_flag == 1){
-		  num --;
-		  if(num == 0){
-			  num = 3;
-		  }
+		  light_traffic_run(5, 2, 3);
 		  setTimer1(100);
-		  display7SEG_North_South(num);
+
 	  }
 
     /* USER CODE END WHILE */

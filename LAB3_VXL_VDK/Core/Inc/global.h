@@ -24,6 +24,9 @@
 #define GREEN_SAVE 11
 #define YELLOW_EDIT 12
 #define YELLOW_SAVE 13
+#define RED_COLOR 22
+#define GREEN_COLOR 23
+#define YELLOW_COLOR 24
 extern int status;
 void clearLed();
 void setLedRed();

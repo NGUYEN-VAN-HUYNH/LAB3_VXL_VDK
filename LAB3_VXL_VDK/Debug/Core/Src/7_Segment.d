@@ -24,7 +24,8 @@ Core/Src/7_Segment.o: ../Core/Src/7_Segment.c ../Core/Inc/7_Segment.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
- ../Core/Inc/button.h ../Core/Inc/timer.h ../Core/Inc/main.h
+ ../Core/Inc/button.h ../Core/Inc/timer.h ../Core/Inc/light_traffic.h \
+ ../Core/Inc/7_Segment.h ../Core/Inc/main.h
 
 ../Core/Inc/7_Segment.h:
 
@@ -83,5 +84,9 @@ Core/Src/7_Segment.o: ../Core/Src/7_Segment.c ../Core/Inc/7_Segment.h \
 ../Core/Inc/button.h:
 
 ../Core/Inc/timer.h:
+
+../Core/Inc/light_traffic.h:
+
+../Core/Inc/7_Segment.h:
 
 ../Core/Inc/main.h:

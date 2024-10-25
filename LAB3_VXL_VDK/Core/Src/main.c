@@ -25,6 +25,7 @@
 #include "global.h"
 #include "7_Segment.h"
 #include "light_traffic.h"
+#include "fsm_automatic.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -96,19 +97,16 @@ HAL_TIM_Base_Start_IT(&htim2);
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-setTimer1(100);
-HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin,GPIO_PIN_RESET);
-HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin,GPIO_PIN_RESET);
-HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin,GPIO_PIN_RESET);
-HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin,GPIO_PIN_RESET);
-
+setTimer1(1);
+HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin,GPIO_PIN_SET);
+HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin,GPIO_PIN_SET);
+HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin,GPIO_PIN_SET);
+HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin,GPIO_PIN_SET);
+updateClockBuffer(3, 5);
   while (1)
   {
-	  if(timer1_flag == 1){
-		  light_traffic_run(5, 2, 3);
-		  setTimer1(100);
+	  fsm_automatic_run();
 
-	  }
 
     /* USER CODE END WHILE */
 

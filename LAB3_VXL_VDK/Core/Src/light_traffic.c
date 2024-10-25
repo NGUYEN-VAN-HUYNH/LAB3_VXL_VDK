@@ -38,8 +38,7 @@ void light_traffic_run( int time_red, int time_yellow, int time_green){
 					check_color_north_south = GREEN_COLOR; // den xanh
 		}
 
-		// hien thi led 7 doan he thong den 1
-		display7SEG_North_South(counter_north_south--);
+
 
 	//  thiet lap trang thai va thoi gian chuyen tin hieu he thong den 2 (led 7 doan o duoi)
 		if(counter_east_west <= 0 && check_color_east_west == RED_COLOR) {
@@ -54,8 +53,13 @@ void light_traffic_run( int time_red, int time_yellow, int time_green){
 				counter_east_west = time_red;
 				check_color_east_west = RED_COLOR; // den do
 		}
-		// hien thi led 7 doan he thong den 2
-		display7SEG_East_West(counter_east_west--);
+
+
+//		// hien thi led 7 doan he thong den 1
+//		display7SEG_North_South(counter_north_south--);
+//		// hien thi led 7 doan he thong den 2
+//		display7SEG_East_West(counter_east_west--);
+		updateClockBuffer(counter_north_south--, counter_east_west--);
 
 
 	// dieu khien chuyen tin hieu he thong  den 1 (led 7 doan o tren)

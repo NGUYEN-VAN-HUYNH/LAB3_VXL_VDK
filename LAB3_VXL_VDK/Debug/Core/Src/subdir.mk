@@ -7,6 +7,7 @@
 C_SRCS += \
 ../Core/Src/7_Segment.c \
 ../Core/Src/button.c \
+../Core/Src/fsm_automatic.c \
 ../Core/Src/global.c \
 ../Core/Src/light_traffic.c \
 ../Core/Src/main.c \
@@ -20,6 +21,7 @@ C_SRCS += \
 C_DEPS += \
 ./Core/Src/7_Segment.d \
 ./Core/Src/button.d \
+./Core/Src/fsm_automatic.d \
 ./Core/Src/global.d \
 ./Core/Src/light_traffic.d \
 ./Core/Src/main.d \
@@ -33,6 +35,7 @@ C_DEPS += \
 OBJS += \
 ./Core/Src/7_Segment.o \
 ./Core/Src/button.o \
+./Core/Src/fsm_automatic.o \
 ./Core/Src/global.o \
 ./Core/Src/light_traffic.o \
 ./Core/Src/main.o \

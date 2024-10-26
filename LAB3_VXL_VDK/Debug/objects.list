@@ -1,6 +1,7 @@
 "./Core/Src/7_Segment.o"
 "./Core/Src/button.o"
 "./Core/Src/fsm_automatic.o"
+"./Core/Src/fsm_manual.o"
 "./Core/Src/global.o"
 "./Core/Src/light_traffic.o"
 "./Core/Src/main.o"

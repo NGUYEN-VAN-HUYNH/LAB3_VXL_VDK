@@ -14,14 +14,12 @@ void fsm_manual_run(){
 			setTimer1(50);
 			}
 
-		if(button1_flag == 1){
-			button1_flag = 0;
+		if(isButton1Pressed() == 1){
 			status = MODE_3;
 			HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin,GPIO_PIN_SET);
 			HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin,GPIO_PIN_RESET);
 			HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin,GPIO_PIN_SET);
-			HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin,GPIO_PIN_RESET);
-			display7SEG_East_West(3);
+			HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin,GPIO_PIN_SET);
 			display7SEG_North_South(3);
 			clearLed();
 			clearLed1();
@@ -35,14 +33,12 @@ void fsm_manual_run(){
 			setTimer1(50);
 			}
 
-		if(button1_flag == 1){
-			button1_flag = 0;
+		if(isButton1Pressed() == 1){
 			status = MODE_4;
 			HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin,GPIO_PIN_SET);
 			HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin,GPIO_PIN_RESET);
 			HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin,GPIO_PIN_SET);
-			HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin,GPIO_PIN_RESET);
-			display7SEG_East_West(4);
+			HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin,GPIO_PIN_SET);
 			display7SEG_North_South(4);
 			clearLed();
 			clearLed1();
@@ -56,14 +52,12 @@ void fsm_manual_run(){
 			setTimer1(50);
 			}
 
-		if(button1_flag == 1){
-			button1_flag = 0;
+		if(isButton1Pressed() == 1){
 			status = MODE_1;
 			HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin,GPIO_PIN_SET);
 			HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin,GPIO_PIN_RESET);
 			HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin,GPIO_PIN_SET);
-			HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin,GPIO_PIN_RESET);
-			display7SEG_East_West(1);
+			HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin,GPIO_PIN_SET);
 			display7SEG_North_South(1);
 			clearLed();
 			clearLed1();

@@ -13,6 +13,7 @@ int led_status_east_west;
 int led_status_north_south;
 int count = 0;
 int count1 = 0;
+
 void init_traffic_light(int check_color_ew,int led_status_ew, int counter_ew,  int check_color_ns,int led_status_ns , int counter_ns){
 	check_color_east_west = check_color_ew;
 	check_color_north_south = check_color_ns;

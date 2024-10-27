@@ -8,12 +8,13 @@
 void fsm_automatic_run(){
 	switch (status){
 	case INIT :
-		init_traffic_light(RED_COLOR,RED_AUTO,5, GREEN_COLOR,GREEN_AUTO,3);
+		init_time_traffic(5,3,2);
+		init_traffic_light(RED_COLOR,RED_AUTO,time_red, GREEN_COLOR,GREEN_AUTO,time_green);
 		HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin,GPIO_PIN_SET);
 		HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin,GPIO_PIN_SET);
 		HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin,GPIO_PIN_SET);
 		HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin,GPIO_PIN_SET);
-		updateClockBuffer(3, 5);
+		updateClockBuffer(time_green, time_red);
 		if(isButton1Pressed() == 1){
 			HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin,GPIO_PIN_RESET);
 			display7SEG_North_South(1);
@@ -28,7 +29,7 @@ void fsm_automatic_run(){
 			display();
 			dem --;
 			if(dem == 0){
-				light_traffic_run(5, 2, 3);
+				light_traffic_run(time_red, time_yellow, time_green);
 				dem  = 4;
 				   }
 			setTimer1(25);

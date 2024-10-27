@@ -31,6 +31,13 @@
 extern int status;
 extern int index_led;
 extern int led_buffer [4];
+extern int red_buffer [2];
+extern int yellow_buffer [2];
+extern int green_buffer [2];
+extern int time_red;
+extern int time_green;
+extern int time_yellow;
+void init_time_traffic(int red, int green, int yellow);
 void clearLed();
 void setLedRed();
 void setLedGreen();
@@ -42,6 +49,10 @@ void setLedGreen1();
 void setLedYellow1();
 
 void updateClockBuffer(int hour, int minute);
+void redBuffer(int red);
+void yellowBuffer(int yellow);
+void greenBuffer(int green);
 void display();
+void display_value_edit (int led_buffer[2]);
 
 #endif /* INC_GLOBAL_H_ */

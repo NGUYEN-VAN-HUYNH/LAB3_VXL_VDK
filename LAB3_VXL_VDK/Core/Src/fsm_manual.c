@@ -25,6 +25,10 @@ void fsm_manual_run(){
 			clearLed1();
 			setTimer1(50);
 		}
+		if(isButton2Pressed() == 1){
+			status = RED_EDIT;
+			setTimer1(25);
+		}
 		break;
 	case MODE_3 :
 		if (timer1_flag == 1){
@@ -44,6 +48,10 @@ void fsm_manual_run(){
 			clearLed1();
 			setTimer1(50);
 		}
+		if(isButton2Pressed() == 1){
+			status = GREEN_EDIT;
+			setTimer1(25);
+		}
 		break;
 	case MODE_4 :
 		if (timer1_flag == 1){
@@ -61,6 +69,10 @@ void fsm_manual_run(){
 			display7SEG_North_South(1);
 			clearLed();
 			clearLed1();
+			setTimer1(25);
+		}
+		if(isButton2Pressed() == 1){
+			status = YELLOW_EDIT;
 			setTimer1(25);
 		}
 		break;

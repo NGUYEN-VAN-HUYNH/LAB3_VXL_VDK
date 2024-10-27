@@ -16,6 +16,7 @@ extern int counter_north_south;
 extern int counter_east_west;
 extern int count;
 extern int count1;
+
 void init_traffic_light(int check_color_ew,int led_status_ew, int counter_ew,  int check_color_ns,int led_status_ns , int counter_ns);
 void light_traffic_run( int time_red, int time_yellow, int time_green);
 

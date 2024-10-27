@@ -28,6 +28,7 @@
 #include "fsm_automatic.h"
 #include "fsm_manual.h"
 #include "fsm_setting.h"
+#include "fsm_save_value.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -110,6 +111,7 @@ HAL_TIM_Base_Start_IT(&htim2);
 	  fsm_automatic_run();
       fsm_manual_run();
       fsm_setting_run();
+      fsm_save_value_run();
 
     /* USER CODE END WHILE */
 

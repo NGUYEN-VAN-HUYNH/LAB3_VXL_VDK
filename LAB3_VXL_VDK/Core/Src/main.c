@@ -22,13 +22,13 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-//#include "global.h"
-//#include "7_Segment.h"
-//#include "light_traffic.h"
-//#include "fsm_automatic.h"
-//#include "fsm_manual.h"
-//#include "fsm_setting.h"
-//#include "fsm_save_value.h"
+#include "global.h"
+#include "7_Segment.h"
+#include "light_traffic.h"
+#include "fsm_automatic.h"
+#include "fsm_manual.h"
+#include "fsm_setting.h"
+#include "fsm_save_value.h"
 #include "scheduler.h"
 /* USER CODE END Includes */
 
@@ -73,6 +73,12 @@ static void MX_TIM2_Init(void);
 void ledred(){
 	HAL_GPIO_TogglePin(LED_RED1_GPIO_Port, LED_RED1_Pin);
 }
+void testB(){
+	if(isButton1Pressed() == 1){
+		HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin);
+	}
+}
+
 int main(void)
 {
   /* USER CODE BEGIN 1 */
@@ -111,6 +117,7 @@ HAL_TIM_Base_Start_IT(&htim2);
 //HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin,GPIO_PIN_SET);
 //updateClockBuffer(3, 5);
 SCH_Add_Task(ledred, 300, 100);
+SCH_Add_Task(testB, 100, 100);
   while (1)
   {
 //	  fsm_automatic_run();
@@ -264,7 +271,7 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 //	timerRun();
-//	getKeyInput();
+	getKeyInput();
 	SCH_Update();
 }
 /* USER CODE END 4 */

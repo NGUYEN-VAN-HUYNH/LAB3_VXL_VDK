@@ -28,7 +28,7 @@ int KeyRegB3_1 = NORMAL_STATE;
 int KeyRegB3_2 = NORMAL_STATE;
 int KeyRegB3_3 = NORMAL_STATE;
 
-int TimeOutForKeyPress = 500;
+int TimeOutForKeyPress = 200;
 
 int button1_flag = 0;
 int button2_flag = 0;
@@ -78,14 +78,14 @@ void getKeyInput() {
 			KeyRegB1_3 = KeyRegB1_2;
 
 			if (KeyRegB1_2 == PRESSED_STATE) {
-				TimeOutForKeyPress = 500;
+				TimeOutForKeyPress = 200;
 				button1_flag = 1;
 			}
 
 		} else {
 			TimeOutForKeyPress--;
 			if (TimeOutForKeyPress == 0) {
-				TimeOutForKeyPress = 500;
+				TimeOutForKeyPress = 200;
 				if (KeyRegB1_2 == PRESSED_STATE) {
 					button1_flag = 1;
 				}
@@ -98,14 +98,14 @@ void getKeyInput() {
 			KeyRegB2_3 = KeyRegB2_2;
 
 			if (KeyRegB2_2 == PRESSED_STATE) {
-				TimeOutForKeyPress = 500;
+				TimeOutForKeyPress = 200;
 				button2_flag = 1;
 			}
 
 		} else {
 			TimeOutForKeyPress--;
 			if (TimeOutForKeyPress == 0) {
-				TimeOutForKeyPress = 500;
+				TimeOutForKeyPress = 200;
 				if (KeyRegB2_2 == PRESSED_STATE) {
 					button2_flag = 1;
 				}
@@ -118,14 +118,14 @@ void getKeyInput() {
 			KeyRegB3_3 = KeyRegB3_2;
 
 			if (KeyRegB3_2 == PRESSED_STATE) {
-				TimeOutForKeyPress = 500;
+				TimeOutForKeyPress = 200;
 				button3_flag = 1;
 			}
 
 		} else {
 			TimeOutForKeyPress--;
 			if (TimeOutForKeyPress == 0) {
-				TimeOutForKeyPress = 500;
+				TimeOutForKeyPress = 200;
 				if (KeyRegB3_2 == PRESSED_STATE) {
 					button3_flag = 1;
 				}

@@ -25,8 +25,6 @@ void fsm_automatic_run() {
 		}
 		break;
 	case MODE_1:
-		if (1) {
-		}
 		if(counter_sch > 0){
 			counter_sch--;
 		}

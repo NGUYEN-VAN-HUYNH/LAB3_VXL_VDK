@@ -47,6 +47,7 @@ void SCH_Dispatch_Tasks(void){
 	for(int i = 0; i < current_index_task; i++){
 		if(SCH_tasks_G[i].RunMe > 0){
 			(*SCH_tasks_G[i].pTask) ();
+			SCH_tasks_G[i].RunMe -=1;
 		}
 		if(SCH_tasks_G[i].Period == 0){
 			SCH_Delete_Task(i);

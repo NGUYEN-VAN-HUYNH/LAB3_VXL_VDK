@@ -20,21 +20,25 @@ void fsm_automatic_run() {
 			HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_RESET);
 			display7SEG_North_South(1);
 			status = MODE_1;
-			setTimer1(100);
+			//setTimer1(100);
+			counter_sch = 4;
 		}
 		break;
 	case MODE_1:
 		if (1) {
 		}
+		if(counter_sch > 0){
+			counter_sch--;
+		}
 		static int dem = 4;
-		if (timer1_flag == 1) {
+		if (counter_sch == 0) {
 			display();
 			dem--;
 			if (dem == 0) {
 				light_traffic_run(time_red, time_yellow, time_green);
 				dem = 4;
 			}
-			setTimer1(25);
+			counter_sch = 1;
 		}
 		if (isButton1Pressed() == 1) {
 			status = MODE_2;
@@ -45,7 +49,7 @@ void fsm_automatic_run() {
 			display7SEG_North_South(2);
 			clearLed();
 			clearLed1();
-			setTimer1(50);
+			counter_sch = 2;
 		}
 		break;
 	}

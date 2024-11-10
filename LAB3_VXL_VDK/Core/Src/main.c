@@ -70,14 +70,7 @@ static void MX_TIM2_Init(void);
   * @brief  The application entry point.
   * @retval int
   */
-void ledred(){
-	HAL_GPIO_TogglePin(LED_RED1_GPIO_Port, LED_RED1_Pin);
-}
-void testB(){
-	if(isButton1Pressed() == 1){
-		HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin);
-	}
-}
+
 
 int main(void)
 {
@@ -116,8 +109,11 @@ HAL_TIM_Base_Start_IT(&htim2);
 //HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin,GPIO_PIN_SET);
 //HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin,GPIO_PIN_SET);
 //updateClockBuffer(3, 5);
-SCH_Add_Task(ledred, 300, 100);
-SCH_Add_Task(testB, 100, 100);
+SCH_Add_Task(fsm_automatic_run, 25, 25);
+SCH_Add_Task(fsm_manual_run, 25, 25);
+SCH_Add_Task(fsm_save_value_run, 25, 25);
+SCH_Add_Task(fsm_setting_run, 25, 25);
+
   while (1)
   {
 //	  fsm_automatic_run();

@@ -37,6 +37,8 @@ extern int green_buffer [2];
 extern int time_red;
 extern int time_green;
 extern int time_yellow;
+
+extern int counter_sch;
 void init_time_traffic(int red, int green, int yellow);
 void clearLed();
 void setLedRed();

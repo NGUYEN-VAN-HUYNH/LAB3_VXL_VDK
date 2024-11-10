@@ -8,10 +8,13 @@
 void fsm_manual_run() {
 	switch (status) {
 	case MODE_2:
-		if (timer1_flag == 1) {
+		if(counter_sch > 0){
+			counter_sch --;
+		}
+		if (counter_sch == 0) {
 			HAL_GPIO_TogglePin(LED_RED1_GPIO_Port, LED_RED1_Pin);
 			HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
-			setTimer1(50);
+			counter_sch = 2;
 		}
 
 		if (isButton1Pressed() == 1) {
@@ -23,18 +26,21 @@ void fsm_manual_run() {
 			display7SEG_North_South(3);
 			clearLed();
 			clearLed1();
-			setTimer1(50);
+			counter_sch = 2;
 		}
 		if (isButton2Pressed() == 1) {
 			status = RED_EDIT;
-			setTimer1(25);
+			counter_sch = 1;
 		}
 		break;
 	case MODE_3:
-		if (timer1_flag == 1) {
+		if(counter_sch > 0){
+			counter_sch --;
+		}
+		if (counter_sch == 0) {
 			HAL_GPIO_TogglePin(LED_GREEN1_GPIO_Port, LED_GREEN1_Pin);
 			HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin);
-			setTimer1(50);
+			counter_sch = 2;
 		}
 
 		if (isButton1Pressed() == 1) {
@@ -46,18 +52,21 @@ void fsm_manual_run() {
 			display7SEG_North_South(4);
 			clearLed();
 			clearLed1();
-			setTimer1(50);
+			counter_sch = 2;
 		}
 		if (isButton2Pressed() == 1) {
 			status = GREEN_EDIT;
-			setTimer1(25);
+			counter_sch = 1;
 		}
 		break;
 	case MODE_4:
-		if (timer1_flag == 1) {
+		if(counter_sch > 0){
+			counter_sch --;
+		}
+		if (counter_sch == 0) {
 			HAL_GPIO_TogglePin(LED_YELLOW1_GPIO_Port, LED_YELLOW1_Pin);
 			HAL_GPIO_TogglePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin);
-			setTimer1(50);
+			counter_sch = 2;
 		}
 
 		if (isButton1Pressed() == 1) {
@@ -69,11 +78,11 @@ void fsm_manual_run() {
 			display7SEG_North_South(1);
 			clearLed();
 			clearLed1();
-			setTimer1(25);
+			counter_sch = 1;
 		}
 		if (isButton2Pressed() == 1) {
 			status = YELLOW_EDIT;
-			setTimer1(25);
+			counter_sch = 1;
 		}
 		break;
 

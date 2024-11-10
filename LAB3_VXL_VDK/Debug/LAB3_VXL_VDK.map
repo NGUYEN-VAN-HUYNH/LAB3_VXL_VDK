@@ -16,6 +16,7 @@ Common symbol       size              file
 
 led_status_north_south
                     0x4               ./Core/Src/light_traffic.o
+SCH_tasks_G         0x320             ./Core/Src/scheduler.o
 uwTick              0x4               ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
 pFlash              0x20              ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o
 check_color_north_south
@@ -727,6 +728,48 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x16 ./Core/Src/main.o
  .debug_macro   0x0000000000000000       0x5e ./Core/Src/main.o
  .debug_macro   0x0000000000000000       0x6a ./Core/Src/main.o
+ .group         0x0000000000000000        0xc ./Core/Src/scheduler.o
+ .group         0x0000000000000000        0xc ./Core/Src/scheduler.o
+ .group         0x0000000000000000        0xc ./Core/Src/scheduler.o
+ .group         0x0000000000000000        0xc ./Core/Src/scheduler.o
+ .group         0x0000000000000000        0xc ./Core/Src/scheduler.o
+ .group         0x0000000000000000        0xc ./Core/Src/scheduler.o
+ .group         0x0000000000000000        0xc ./Core/Src/scheduler.o
+ .text          0x0000000000000000        0x0 ./Core/Src/scheduler.o
+ .data          0x0000000000000000        0x0 ./Core/Src/scheduler.o
+ .bss           0x0000000000000000        0x0 ./Core/Src/scheduler.o
+ .bss.current_index_task
+                0x0000000000000000        0x1 ./Core/Src/scheduler.o
+ .text.SCH_Init
+                0x0000000000000000       0x18 ./Core/Src/scheduler.o
+ .text.SCH_Delete_Task
+                0x0000000000000000       0x64 ./Core/Src/scheduler.o
+ .text.SCH_Add_Task
+                0x0000000000000000       0xac ./Core/Src/scheduler.o
+ .text.SCH_Update
+                0x0000000000000000       0xc0 ./Core/Src/scheduler.o
+ .text.SCH_Dispatch_Tasks
+                0x0000000000000000       0x78 ./Core/Src/scheduler.o
+ .debug_info    0x0000000000000000      0x216 ./Core/Src/scheduler.o
+ .debug_abbrev  0x0000000000000000      0x12b ./Core/Src/scheduler.o
+ .debug_aranges
+                0x0000000000000000       0x40 ./Core/Src/scheduler.o
+ .debug_ranges  0x0000000000000000       0x30 ./Core/Src/scheduler.o
+ .debug_macro   0x0000000000000000       0x73 ./Core/Src/scheduler.o
+ .debug_macro   0x0000000000000000      0xa9c ./Core/Src/scheduler.o
+ .debug_macro   0x0000000000000000       0x22 ./Core/Src/scheduler.o
+ .debug_macro   0x0000000000000000       0x8e ./Core/Src/scheduler.o
+ .debug_macro   0x0000000000000000       0x51 ./Core/Src/scheduler.o
+ .debug_macro   0x0000000000000000      0x103 ./Core/Src/scheduler.o
+ .debug_macro   0x0000000000000000       0x6a ./Core/Src/scheduler.o
+ .debug_macro   0x0000000000000000      0x1df ./Core/Src/scheduler.o
+ .debug_line    0x0000000000000000      0x48d ./Core/Src/scheduler.o
+ .debug_str     0x0000000000000000     0x3d6e ./Core/Src/scheduler.o
+ .comment       0x0000000000000000       0x54 ./Core/Src/scheduler.o
+ .debug_frame   0x0000000000000000       0xcc ./Core/Src/scheduler.o
+ .ARM.attributes
+                0x0000000000000000       0x2d ./Core/Src/scheduler.o
+ COMMON         0x0000000000000000      0x320 ./Core/Src/scheduler.o
  .group         0x0000000000000000        0xc ./Core/Src/stm32f1xx_hal_msp.o
  .group         0x0000000000000000        0xc ./Core/Src/stm32f1xx_hal_msp.o
  .group         0x0000000000000000        0xc ./Core/Src/stm32f1xx_hal_msp.o
@@ -2878,6 +2921,7 @@ LOAD ./Core/Src/fsm_setting.o
 LOAD ./Core/Src/global.o
 LOAD ./Core/Src/light_traffic.o
 LOAD ./Core/Src/main.o
+LOAD ./Core/Src/scheduler.o
 LOAD ./Core/Src/stm32f1xx_hal_msp.o
 LOAD ./Core/Src/stm32f1xx_it.o
 LOAD ./Core/Src/syscalls.o

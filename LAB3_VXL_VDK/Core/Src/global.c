@@ -18,6 +18,10 @@ int green_buffer[2] = { 0, 0 };
 int time_red = 5;
 int time_green = 3;
 int time_yellow = 2;
+
+int count = 0;
+int count1 = 0;
+
 void init_time_traffic(int red, int green, int yellow) {
 	time_red = red;
 	;

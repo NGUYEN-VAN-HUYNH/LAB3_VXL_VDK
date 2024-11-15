@@ -16,6 +16,8 @@ void fsm_automatic_run() {
 		HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, GPIO_PIN_SET);
 		HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, GPIO_PIN_SET);
 		updateClockBuffer(time_green, time_red);
+		count = 0;
+		count1 = 0;
 		if (isButton1Pressed() == 1) {
 			HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_RESET);
 			display7SEG_North_South(1);

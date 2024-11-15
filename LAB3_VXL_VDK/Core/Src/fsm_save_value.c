@@ -12,7 +12,9 @@ void fsm_save_value_run() {
 		if(counter_sch > 0){
 			counter_sch --;
 		}
-		time_red = time_red;
+//		time_red = time_red;
+//		time_green = time_green;
+//		time_yellow = time_yellow;
 		clearLed();
 		clearLed1();
 		if (counter_sch == 0) {
@@ -24,7 +26,9 @@ void fsm_save_value_run() {
 		if(counter_sch > 0){
 			counter_sch --;
 		}
-		time_green = time_green;
+//		time_green = time_green;
+//		time_red = time_red;
+//		time_yellow = time_yellow;
 		clearLed();
 		clearLed1();
 		if (counter_sch == 0) {
@@ -35,7 +39,9 @@ void fsm_save_value_run() {
 		if(counter_sch > 0){
 			counter_sch --;
 		}
-		time_yellow = time_yellow;
+//		time_yellow = time_yellow;
+//		time_green = time_green;
+//		time_red = time_red;
 		clearLed();
 		clearLed1();
 		if (counter_sch == 0) {

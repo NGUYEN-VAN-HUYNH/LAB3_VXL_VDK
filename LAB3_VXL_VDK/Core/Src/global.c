@@ -21,6 +21,9 @@ int time_yellow = 2;
 
 int counter_sch = 0;
 
+int count = 0;
+int count1 = 0;
+
 void init_time_traffic(int red, int green, int yellow) {
 	time_red = red;
 	;

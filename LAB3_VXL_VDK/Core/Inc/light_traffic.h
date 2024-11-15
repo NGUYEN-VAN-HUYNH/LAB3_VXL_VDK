@@ -10,6 +10,7 @@
 #include "main.h"
 #include "global.h"
 #include "7_Segment.h"
+#include "global.h"
 extern int check_color_east_west;
 extern int check_color_north_south;
 extern int counter_north_south;
